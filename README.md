@@ -18,6 +18,8 @@ This coding quiz is intended to test the javascript knowledge for noobs.
 # Credits
 
 - TRILOGY class for instructions, html and CSS
+- Bootstrap - 4.5.3
+- jQuery - 3.5.1
 
 # MIT License
 
