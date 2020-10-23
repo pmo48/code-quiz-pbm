@@ -16,16 +16,24 @@ $(document).ready(function() {
     $("#button2").text("TestOption2");
     $("#button3").text("TestOption3");
     $("#button4").text("TestOption4");
-  })
-
-
-  $("#button1, #button2, #button3, #button4").on("click", function () {
-    $("#question").text("TestQuestion2?");
-    $("#button1").text("TestQ2Option1");
-    $("#button2").text("TestQ2Option2");
-    $("#button3").text("TestQ2Option3");
-    $("#button4").text("TestQ2Option4");
-  })
+    
+    $("#button1, #button2, #button3, #button4").on("click", function () {
+      $("#question").text("TestQuestion2?");
+      $("#button1").text("TestQ2Option1");
+      $("#button2").text("TestQ2Option2");
+      $("#button3").text("TestQ2Option3");
+      $("#button4").text("TestQ2Option4");
+    })
+      $("#button1").on("click", function () {
+        $score++;
+        console.log($score);
+      })
+      $("#button2, #button3, #button4").on("click", function () {
+        $timer = $timer - 30;
+        console.log($timer);
+      }
+      
+      )
 
   $("#button1, #button2, #button3, #button4").on("click", function () {
     $("#question").text("TestQuestion2?");
@@ -42,5 +50,5 @@ $(document).ready(function() {
     $("#button3").text("TestQ2Option3");
     $("#button4").text("TestQ2Option4");
   })
-
+})
 })
