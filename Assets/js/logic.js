@@ -1,8 +1,15 @@
 // Button click to start game
+var $timer = 75;
 
 $(document).ready(function() {
   
   $("#startbutton").on("click", function () {
+
+    interval = setInterval(function() {
+      $timer--;
+      $(".timer").text("Time Left: " + $timer);
+    }, 1000);
+
     $("#question").text("TestQuestion1?");
     $("#button1").text("TestOption1");
     $("#button2").text("TestOption2");
