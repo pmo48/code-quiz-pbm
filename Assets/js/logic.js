@@ -8,14 +8,12 @@ $(document).ready(function () {
   var questions = [
     {
       q: "What color is the sky?",
-      o: ["blue",
-        "green",
-        "yellow", "red"],
+      o: ["blue", "green", "yellow", "red"],
       a: "blue",
     },
     {
       q: "What color is the grass?",
-      o: ["blue", "green", "yellow", "red"],
+      o: ["green", "yellow", "blue", "red"],
       a: "blue",
     },
     {
@@ -141,27 +139,33 @@ $(document).ready(function () {
   }
 
 })
- //
+
+//select submit button variable
 
 var submitHS = document.querySelector(".submit-btn")
-  //submit function
+  
+//submit button event listener, add score and redirect to high scores page
 
-  submitHS.addEventListener("click", function (event) {
+  submitHS.addEventListener("click", function(event) {
     event.stopPropagation();
     addScore(event);
     hsRedirect(event);
   });
 
+  //function to redirect to high scores page
+
   function hsRedirect(event) {
-     window.location.href = 'highscores.html';
+     window.location.href = "highscores.html";
   }
   
+  //function to redirect to high scores page
+
   function addScore (event) {
     initialsInput = document.getElementById("formInput").value
     
     var newScore = {
-      name: initialsInput,
-      score: $score,
+      name: initialsInput.value.trim(),
+      score: $score.value.trim(),
     };
 
     var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
@@ -169,15 +173,10 @@ var submitHS = document.querySelector(".submit-btn")
     localStorage.setItem("highScores", JSON.stringify(highScores));
   }
 
-  // hsButton.addEventListener("click", function(event) {
-//   event.preventDefault();
-//   initialsInput = initialsInput.value;
-//   localStorage.setItem("user", JSON.stringify(initialsInput));
-//   console.log(initialsInput);
-//  })
+  
 
     //check if input is not empty
-    // if (userInput !== "") {
+
       //get the old data
 
       //create the new data
