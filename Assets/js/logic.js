@@ -11,17 +11,32 @@ $(document).ready(function () {
       o: ["blue",
         "green",
         "yellow", "red"],
-      a: "blue"
+      a: "blue",
     },
     {
       q: "What color is the grass?",
       o: ["blue", "green", "yellow", "red"],
-      a: "blue"
+      a: "blue",
     },
     {
-      q: "What color is the cloud?",
+      q: "What color are clouds?",
       o: ["brown", "green", "white", "red"],
-      a: "white"
+      a: "white",
+    },
+    {
+      q: "How many states are in the USA?",
+      o: ["20", "40", "45", "50"],
+      a: "50",
+    },
+    {
+      q: "What is the capitol of the USA?",
+      o: ["Washington D.C.", "L.A.", "NYC", "Chicago"],
+      a: "Washington D.C.",
+    },
+    {
+      q: "What is NOT a USA color?",
+      o: ["red", "white", "blue", "yellow"],
+      a: "yellow",
     },
   ];
 
@@ -123,27 +138,56 @@ $(document).ready(function () {
     //display score
 
     $(".final-score").text("Here's your final score: " + $score)
-
   }
 
 })
+ //
 
-  // //submit function
-  // document.querySelecton(".submit-btn").addEventListener("click", storeData);
+var submitHS = document.querySelector(".submit-btn")
+  //submit function
 
-  // function storeData() {
-  //   //get the input box value in a var
-  //    var userInput = document.querySelector("#end-container input");
+  submitHS.addEventListener("click", function (event) {
+    event.stopPropagation();
+    addScore(event);
+    hsRedirect(event);
+  });
 
-  //   //check if input is not empty
-  //   if (userInput !== "") {
-  //     //get the old data
-  //       var data = 
-  //     //create the new data
+  function hsRedirect(event) {
+     window.location.href = 'highscores.html';
+  }
+  
+  function addScore (event) {
+    initialsInput = document.getElementById("formInput").value
+    
+    var newScore = {
+      name: initialsInput,
+      score: $score,
+    };
 
-  //     //add the new data to old data
+    var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
+    highScores.push(newScore)
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  }
 
-  //     //store it
+  // hsButton.addEventListener("click", function(event) {
+//   event.preventDefault();
+//   initialsInput = initialsInput.value;
+//   localStorage.setItem("user", JSON.stringify(initialsInput));
+//   console.log(initialsInput);
+//  })
 
-  //     //redirect the user to other HTML page
+    //check if input is not empty
+    // if (userInput !== "") {
+      //get the old data
+
+      //create the new data
+
+      //add the new data to old data
+
+
+      //store it
+
+      //redirect the user to other HTML page
+
+      
    

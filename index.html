@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-  <title>Coding Quiz Throwdown!</title>
+  <title>Quiz for 3rd Graders!</title>
 </head>
 
 <body>
@@ -22,15 +22,14 @@
   </nav>
   <div class="container"></div>
   <div class="text-center">
-    <h1 class="mt-2 intro"> Coding Quiz Throwdown!</h1>
+    <h1 class="mt-2 intro"> Quiz for 3rd Graders!</h1>
   </div>
   </div>
   </div>
   <div class="container intro">
     <div class="row">
       <h4>
-        Welcome to the Coding Quiz Throwdown! The purpose of this quiz is to test your skills as you hone your
-        Javascript knowledge. Each time you answer a question correctly, your score increases by 1. If you answer
+        Welcome to the Quiz for 3rd Graders! The purpose of this quiz is to test your ability to pass the third grade. Each time you answer a question correctly, your score increases by 1. If you answer
         incorrectly, you lose 30 seconds off the clock. Good luck!
       </h4>
     </div>
@@ -49,9 +48,16 @@
   </div>
   
   <div class="end-screen container">
-    <div class="end-screen col-6">
+    <div class="end-screen">
       <h3 class="end-screen"> You're done!</h3>
       <p class="final-score"></p>
+      <form method="POST">
+        <div class="form-group">
+          <label for="formGroupExampleInput">Enter your initials</label>
+          <input type="text" class="formInput form-control" id="formGroupExampleInput">
+        </div>
+        <button type="submit" class="submit-btn btn btn-primary">Submit</button>
+      </form>
     </div>
   </div>
 
