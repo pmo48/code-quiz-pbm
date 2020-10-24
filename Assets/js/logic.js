@@ -112,7 +112,7 @@ $(document).ready(function () {
 
     $("#questionbank").hide();
 
-    //hide timer
+    //hide timers
 
     $(".timer").hide()
 
