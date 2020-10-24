@@ -1,64 +1,70 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Coding Quiz Throwdown!</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-light bg-light">
-      <div class="container">
-        <a href="highscores.html" class="btn btn-outline-success text-left" type="button">High Scores</a>
-        <button class="btn btn-outline-success text-right timer" type="button">Time Left: 75</button>
-      </div>
-    </nav>
-    <div class="container"></div>
-      <div class="text-center">
-          <h1 class="mt-2 intro"> Coding Quiz Throwdown!</h1>
-          </div>
-      </div>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <title>Coding Quiz Throwdown!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container">
+      <a href="highscores.html" class="btn btn-outline-success text-left" type="button">High Scores</a>
+      <button class="btn btn-outline-success text-right timer" type="button">Time Left: 75</button>
     </div>
-    <div class="container intro">
-      <div class="row">
-          <h4>
-           Welcome to the Coding Quiz Throwdown! The purpose of this quiz is to break you and make you cry yourself to sleep at night. Good luck, and remember - you can't do this. 
-          </h4>
-      </div>
+  </nav>
+  <div class="container"></div>
+  <div class="text-center">
+    <h1 class="mt-2 intro"> Coding Quiz Throwdown!</h1>
+  </div>
+  </div>
+  </div>
+  <div class="container intro">
+    <div class="row">
+      <h4>
+        Welcome to the Coding Quiz Throwdown! The purpose of this quiz is to test your skills as you hone your
+        Javascript knowledge. Each time you answer a question correctly, your score increases by 1. If you answer
+        incorrectly, you lose 30 seconds off the clock. Good luck!
+      </h4>
+    </div>
     <div class="container intro">
       <div class="row">
         <div class="col-3"></div>
-          <div class="col-6 text-center">
-            <button 
-            id="startbutton"
-            type="button" class="btn btn-outline-primary" class="mx-auto" style="width: 200px;">Start</button>
-          </div>
+        <div class="col-6 text-center">
+          <button id="startbutton" type="button" class="btn btn-outline-primary" class="mx-auto"
+            style="width: 200px;">Start</button>
         </div>
       </div>
     </div>
-    <div id="questionbank">
-      <div>
-        <h4 id="question" class="text-center mt-3"> </h4>
-      </div>
-      <div class="list-group mt-3 text-center">
-        <button id="button1" type="button" class="list-group-item list-group-item-action"></button>
-        <button id="button2" type="button" class="list-group-item list-group-item-action"></button>
-        <button id="button3" type="button" class="list-group-item list-group-item-action"></button>
-        <button id="button4" type="button" class="list-group-item list-group-item-action"></button>
+  </div>
+  <div id="questionbank">
+   <!-- question goes here -->
+  </div>
+  
+  <div class="end-screen container">
+    <div class="end-screen col-6">
+      <h3 class="end-screen"> You're done!</h3>
+      <p class="final-score"></p>
     </div>
-    </div>
-      
+  </div>
+
+  <!-- javascript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+  <script src="./Assets/js/logic.js"></script>
 
 
-    <!-- javascript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="./Assets/js/logic.js"></script>
+</body>
 
-
-  </body>
 </html>

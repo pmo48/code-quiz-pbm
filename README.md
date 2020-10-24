@@ -2,7 +2,7 @@
 
 This coding quiz is intended to test the javascript knowledge for noobs. 
 
-![code quiz screenshot](./Assets/images/pwd_gen.png)
+![code quiz screenshot](./Assets/images/cq-sh.png)
 
 # Installation
 
