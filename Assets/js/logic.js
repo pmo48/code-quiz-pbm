@@ -138,10 +138,18 @@ $(document).ready(function () {
     $(".final-score").text("Here's your final score: " + $score)
   }
 
+  // grab button and form input from html
   var submitHS = document.querySelector(".submit-btn")
+  var formInput = document.querySelector(".formInput")
 
+  // add event listener for button click
   submitHS.addEventListener("click", function(event) {
-    window.location.href = "espn.com";
+    event.preventDefault();
+
+    //store initials in variable, console log it and redirect to highscores page
+    var initialsInput = formInput.value.trim();
+    console.log(initialsInput + $score);
+    window.location.href = "highscores.html";
   });
 
 })
