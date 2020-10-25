@@ -138,40 +138,48 @@ $(document).ready(function () {
     $(".final-score").text("Here's your final score: " + $score)
   }
 
+  var submitHS = document.querySelector(".submit-btn")
+
+  submitHS.addEventListener("click", function(event) {
+    window.location.href = "espn.com";
+  });
+
 })
 
 //select submit button variable
 
-var submitHS = document.querySelector(".submit-btn")
+// var submitHS = document.querySelector(".submit-btn")
   
-//submit button event listener, add score and redirect to high scores page
+// //submit button event listener, add score and redirect to high scores page
 
-  submitHS.addEventListener("click", function(event) {
-    event.stopPropagation();
-    addScore(event);
-    hsRedirect(event);
-  });
+
+// event.stopPropagation();
+    // addScore(event);
+    // hsRedirect(event);
+
+//   submitHS.addEventListener("click", function(event) {
+//     window.location.href = "highscores.html";
+//     event.stopPropagation();
+//     addScore(event);
+//     hsRedirect(event);
+//   });
 
   //function to redirect to high scores page
-
-  function hsRedirect(event) {
-     window.location.href = "highscores.html";
-  }
   
   //function to redirect to high scores page
 
-  function addScore (event) {
-    initialsInput = document.getElementById("formInput").value
+  // function addScore (event) {
+  //   initialsInput = document.getElementById("formInput").value
     
-    var newScore = {
-      name: initialsInput.value.trim(),
-      score: $score.value.trim(),
-    };
+  //   var newScore = {
+  //     name: initialsInput.value.trim(),
+  //     score: $score.value.trim(),
+  //   };
 
-    var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
-    highScores.push(newScore)
-    localStorage.setItem("highScores", JSON.stringify(highScores));
-  }
+  //   var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
+  //   highScores.push(newScore)
+  //   localStorage.setItem("highScores", JSON.stringify(highScores));
+  // }
 
   
 
