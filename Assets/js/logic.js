@@ -145,14 +145,32 @@ $(document).ready(function () {
   // add event listener for button click
   submitHS.addEventListener("click", function(event) {
     event.preventDefault();
+    createHS(event);
+    // redirectHS(event);
+  })
 
-    //store initials in variable, console log it and redirect to highscores page
+  function createHS() {
+  //store initials  and score in variable
     var initialsInput = formInput.value.trim();
-    console.log(initialsInput + $score);
-    window.location.href = "highscores.html";
-  });
+    var highScore = $score
+  
+  // create new variable for the initials + score
 
-})
+    var newHS = {
+      name: initialsInput,
+      score: highScore,
+    }
+  //console log initials input and score
+
+    localStorage.setItem("High Score", JSON.stringify(newHS))
+
+    console.log(newHS);
+  }
+    
+
+    // //redirect to highscores page
+    // window.location.href = "highscores.html";
+  })
 
 //select submit button variable
 
