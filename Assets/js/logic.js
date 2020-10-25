@@ -141,15 +141,23 @@ $(document).ready(function () {
   // grab button and form input from html
   var submitHS = document.querySelector(".submit-btn")
   var formInput = document.querySelector(".formInput")
+  var highScores = [];
 
   // add event listener for button click
   submitHS.addEventListener("click", function(event) {
     event.preventDefault();
-    createHS(event);
+    addHS(event);
     // redirectHS(event);
   })
 
-  function createHS() {
+  //initialize High Scores
+
+  function storeHighscores() {
+    localStorage.setItem("High Score", JSON.stringify(highScores))
+
+  }
+
+  function addHS() {
   //store initials  and score in variable
     var initialsInput = formInput.value.trim();
     var highScore = $score
@@ -160,11 +168,12 @@ $(document).ready(function () {
       name: initialsInput,
       score: highScore,
     }
+  //add new High Scores to the list
+    highScores.push(newHS);
+
   //console log initials input and score
 
-    localStorage.setItem("High Score", JSON.stringify(newHS))
-
-    console.log(newHS);
+    console.log(highScores);
   }
     
 
