@@ -25,7 +25,7 @@ $(document).ready(function () {
       a: "white",
     },
     {
-      q: "How hours are in a day?",
+      q: "How many hours are in a day?",
       o: ["20", "12", "24", "8"],
       a: "24",
     },
@@ -35,7 +35,7 @@ $(document).ready(function () {
       a: "Washington D.C.",
     },
     {
-      q: "What is NOT a USA color?",
+      q: "What is NOT a color on the US flag?",
       o: ["red", "white", "blue", "yellow"],
       a: "yellow",
     },
@@ -148,10 +148,8 @@ $(document).ready(function () {
   }
 
   // grab button and form input from html
-  var submitHS = document.querySelector(".submit-btn")
-  var formInput = document.querySelector(".formInput")
-  var highScores = [];
-
+  var submitHS = document.querySelector(".submit-btn");
+  var formInput = document.querySelector(".formInput");
 
   // add event listener for button click
   submitHS.addEventListener("click", function(event) {
@@ -160,13 +158,7 @@ $(document).ready(function () {
     redirectHS(event);
   });
 
-  //initialize High Scores
-
-  // function storeHighscores() {
-  //   localStorage.setItem("High Score", JSON.stringify(highScores))
-
-  // }
-
+  //function to add high scores
   function addHS() {
   //store initials  and score in variable
     var initialsInput = formInput.value.trim();
@@ -176,75 +168,28 @@ $(document).ready(function () {
 
     var newHS = " Name: " + initialsInput + " -----" + " Score: " + highScore;
       
-    
-
+    //high score console log check
     console.log(highScores);
-  //add new High Scores to the list
-    highScores.push(newHS);
-    localStorage.setItem("High Score", JSON.stringify(highScores))
+
+  //get existing high scores
+  var highScores = JSON.parse(localStorage.getItem("High Score") || "[]");
+
+  //combine new high scores to existing high scores
+  highScores.push(newHS);
+
+  //set combined high scores list to localStorage
+  localStorage.setItem("High Score", JSON.stringify(highScores))
+
+  //remove form input value after submission
     formInput.value = "";
-
-  //console log initials input and score
-
-    console.log(highScores);
     
   }
+
+  //redirect to high score page
   
   function redirectHS() {
     window.location.href = "highscores.html";
   }    
 
   })
-
-//select submit button variable
-
-// var submitHS = document.querySelector(".submit-btn")
-  
-// //submit button event listener, add score and redirect to high scores page
-
-
-// event.stopPropagation();
-    // addScore(event);
-    // hsRedirect(event);
-
-//   submitHS.addEventListener("click", function(event) {
-//     window.location.href = "highscores.html";
-//     event.stopPropagation();
-//     addScore(event);
-//     hsRedirect(event);
-//   });
-
-  //function to redirect to high scores page
-  
-  //function to redirect to high scores page
-
-  // function addScore (event) {
-  //   initialsInput = document.getElementById("formInput").value
-    
-  //   var newScore = {
-  //     name: initialsInput.value.trim(),
-  //     score: $score.value.trim(),
-  //   };
-
-  //   var highScores = JSON.parse(localStorage.getItem("highScores") || "[]");
-  //   highScores.push(newScore)
-  //   localStorage.setItem("highScores", JSON.stringify(highScores));
-  // }
-
-  
-
-    //check if input is not empty
-
-      //get the old data
-
-      //create the new data
-
-      //add the new data to old data
-
-
-      //store it
-
-      //redirect the user to other HTML page
-
-      
    

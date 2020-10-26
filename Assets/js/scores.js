@@ -1,6 +1,9 @@
+// variable list for score logic
+
 var highScoreslist = document.querySelector(".highScoresList");
 var highScores = [];
 
+// initialize high score list
 init();
 
 function renderHighScores() {
