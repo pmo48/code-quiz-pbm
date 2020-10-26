@@ -1,22 +1,34 @@
+var highScoreslist = document.querySelector(".highScoresList");
+var highScores = [];
+
+init();
+
 function renderHighScores() {
-    // Clear todoList element and update todoCountSpan
-    var storedHighScores = JSON.parse(localStorage.getItem("High Scores"));
+  // Clear todoList element and update todoCountSpan
+  // highScoreslist.innerHTML = "";
 
-  // If todos were retrieved from localStorage, update the todos array to it
-    if (storedHighScores !== null) {
-      highScoreslist = storedHighScores;
-    
-    $(".highScoreList").text(storedHighScores);
+  // Render a new li for each high score
+  for (var i = 0; i < highScores.length; i++) {
+    var hs = highScores[i];
 
-    // Render a new li for each todo
-    // for (var i = 0; i < highScores.length; i++) {
-    //   var hs = highScores[i];
-  
-    //   var li = document.createElement("li");
-    //   li.textContent = hs;
-    //   li.setAttribute("data-index", i);
-  
-    //   highScoreslist.appendChild(li);
-    // }
+    var li = document.createElement("li");
+    li.textContent = hs;
+    li.setAttribute("data-index", i);
+
+    highScoreslist.appendChild(li);
   }
+}
+
+function init() {
+  // Get stored high scores from localStorage
+  // Parsing the JSON string to an object
+  var storedHighScores = JSON.parse(localStorage.getItem("High Score"));
+
+  // If high scores were retrieved from localStorage, update the todos array to it
+  if (storedHighScores !== null) {
+    highScores = storedHighScores;
   }
+
+  // Render todos to the DOM
+  renderHighScores();
+}

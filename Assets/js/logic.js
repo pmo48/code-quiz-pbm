@@ -73,7 +73,11 @@ $(document).ready(function () {
   function generateQuestion() {
     //check if last question
     if (questionIndex === questions.length) {
+
+      //if all questions are asked, call function to end the quiz
       endTheQuiz();
+
+      //if all questions are asked, don't run remainder of generate question
       return;
     }
     //create question markUp in var
@@ -146,7 +150,6 @@ $(document).ready(function () {
   // grab button and form input from html
   var submitHS = document.querySelector(".submit-btn")
   var formInput = document.querySelector(".formInput")
-  var highScoreslist = document.querySelector(".highScoresList");
   var highScores = [];
 
 
