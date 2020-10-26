@@ -77,7 +77,7 @@ $(document).ready(function () {
       //if all questions are asked, call function to end the quiz
       endTheQuiz();
 
-      //if all questions are asked, don't run remainder of generate question
+      //if all questions are asked, don't run remainder of  questions
       return;
     }
     //create question markUp in var
