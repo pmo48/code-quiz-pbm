@@ -174,10 +174,9 @@ $(document).ready(function () {
   
   // create new variable for the initials + score
 
-    var newHS = {
-      name: initialsInput,
-      score: highScore,
-    }
+    var newHS = " Name: " + initialsInput + " -----" + " Score: " + highScore;
+      
+    
 
     console.log(highScores);
   //add new High Scores to the list
