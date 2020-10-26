@@ -5,7 +5,6 @@ $(document).ready(function () {
 
   //high schores array
 
-  var highScores = [];
 
   // question bank
   var questionIndex = 0;
@@ -146,23 +145,23 @@ $(document).ready(function () {
   var submitHS = document.querySelector(".submit-btn")
   var formInput = document.querySelector(".formInput")
   var highScoreslist = document.querySelector(".highScoresList");
+  var highScores = [];
+
 
   // add event listener for button click
   submitHS.addEventListener("click", function(event) {
     event.preventDefault();
     addHS(event);
-    storeHighscores(event);
-    // redirectHS(event);
+    redirectHS(event);
     renderHighScores(event);
-
-  })
+  });
 
   //initialize High Scores
 
-  function storeHighscores() {
-    localStorage.setItem("High Score", JSON.stringify(highScores))
+  // function storeHighscores() {
+  //   localStorage.setItem("High Score", JSON.stringify(highScores))
 
-  }
+  // }
 
   function addHS() {
   //store initials  and score in variable
@@ -179,23 +178,29 @@ $(document).ready(function () {
     console.log(highScores);
   //add new High Scores to the list
     highScores.push(newHS);
+    localStorage.setItem("High Score", JSON.stringify(highScores))
     formInput.value = "";
 
   //console log initials input and score
 
     console.log(highScores);
-
-    storeHighscores();
-    renderHighScores();
     
   }
   
-    // //redirect to highscores page
-    // window.location.href = "highscores.html";
+  function redirectHS() {
+    window.location.href = "highscores.html";
+  }    
 
   function renderHighScores() {
     // Clear todoList element and update todoCountSpan
-    document.getElementById("highScoresList").innerHTML = highScoreslist;
+    var storedHighScores = JSON.parse(localStorage.getItem("High Scores"));
+
+  // If todos were retrieved from localStorage, update the todos array to it
+    if (storedHighScores !== null) {
+      highScoreslist = storedHighScores;
+    
+    $(".highScoreList").text(storedHighScores);
+
     // Render a new li for each todo
     // for (var i = 0; i < highScores.length; i++) {
     //   var hs = highScores[i];
@@ -206,6 +211,7 @@ $(document).ready(function () {
   
     //   highScoreslist.appendChild(li);
     // }
+  }
   }
   })
 
