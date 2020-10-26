@@ -3,6 +3,10 @@ $(document).ready(function () {
   var $timer = 75;
   var $score = 0;
 
+  //high schores array
+
+  var highScores = [];
+
   // question bank
   var questionIndex = 0;
   var questions = [
@@ -141,13 +145,16 @@ $(document).ready(function () {
   // grab button and form input from html
   var submitHS = document.querySelector(".submit-btn")
   var formInput = document.querySelector(".formInput")
-  var highScores = [];
+  var highScoreslist = document.querySelector(".highScoresList");
 
   // add event listener for button click
   submitHS.addEventListener("click", function(event) {
     event.preventDefault();
     addHS(event);
+    storeHighscores(event);
     // redirectHS(event);
+    renderHighScores(event);
+
   })
 
   //initialize High Scores
@@ -168,17 +175,38 @@ $(document).ready(function () {
       name: initialsInput,
       score: highScore,
     }
+
+    console.log(highScores);
   //add new High Scores to the list
     highScores.push(newHS);
+    formInput.value = "";
 
   //console log initials input and score
 
     console.log(highScores);
-  }
-    
 
+    storeHighscores();
+    renderHighScores();
+    
+  }
+  
     // //redirect to highscores page
     // window.location.href = "highscores.html";
+
+  function renderHighScores() {
+    // Clear todoList element and update todoCountSpan
+    document.getElementById("highScoresList").innerHTML = highScoreslist;
+    // Render a new li for each todo
+    // for (var i = 0; i < highScores.length; i++) {
+    //   var hs = highScores[i];
+  
+    //   var li = document.createElement("li");
+    //   li.textContent = hs;
+    //   li.setAttribute("data-index", i);
+  
+    //   highScoreslist.appendChild(li);
+    // }
+  }
   })
 
 //select submit button variable
