@@ -15,9 +15,9 @@ $(document).ready(function () {
       a: "blue",
     },
     {
-      q: "What color is the grass?",
-      o: ["green", "yellow", "blue", "red"],
-      a: "blue",
+      q: "How many states are in the USA?",
+      o: ["20", "40", "45", "50"],
+      a: "50",
     },
     {
       q: "What color are clouds?",
@@ -25,9 +25,9 @@ $(document).ready(function () {
       a: "white",
     },
     {
-      q: "How many states are in the USA?",
-      o: ["20", "40", "45", "50"],
-      a: "50",
+      q: "How hours are in a day?",
+      o: ["20", "12", "24", "8"],
+      a: "24",
     },
     {
       q: "What is the capitol of the USA?",
@@ -71,7 +71,11 @@ $(document).ready(function () {
   var questionBank = document.querySelector("#questionbank");
 
   function generateQuestion() {
-
+    //check if last question
+    if (questionIndex === questions.length) {
+      endTheQuiz();
+      return;
+    }
     //create question markUp in var
     var questionMarkUp = `
       <div>
@@ -109,11 +113,9 @@ $(document).ready(function () {
 
     //increment index
     questionIndex++;
-
-    //check if last question
-    if (questionIndex === questions.length) {
-      endTheQuiz();
-    }
+    
+    //check score between questions
+    console.log($score)
 
     //show next question
     generateQuestion();
@@ -153,7 +155,6 @@ $(document).ready(function () {
     event.preventDefault();
     addHS(event);
     redirectHS(event);
-    renderHighScores(event);
   });
 
   //initialize High Scores
@@ -191,28 +192,6 @@ $(document).ready(function () {
     window.location.href = "highscores.html";
   }    
 
-  function renderHighScores() {
-    // Clear todoList element and update todoCountSpan
-    var storedHighScores = JSON.parse(localStorage.getItem("High Scores"));
-
-  // If todos were retrieved from localStorage, update the todos array to it
-    if (storedHighScores !== null) {
-      highScoreslist = storedHighScores;
-    
-    $(".highScoreList").text(storedHighScores);
-
-    // Render a new li for each todo
-    // for (var i = 0; i < highScores.length; i++) {
-    //   var hs = highScores[i];
-  
-    //   var li = document.createElement("li");
-    //   li.textContent = hs;
-    //   li.setAttribute("data-index", i);
-  
-    //   highScoreslist.appendChild(li);
-    // }
-  }
-  }
   })
 
 //select submit button variable
